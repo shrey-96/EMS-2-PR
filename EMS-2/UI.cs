@@ -14,15 +14,18 @@ namespace EMS_2
     {
         int inc_val = 5;
         DataAccess db;
-
+        Demographics demographics;
+        
+        // initialize the components of the form
         public UI()
         {
             InitializeComponent();
+          //  demographics = new Demographics();
 
-          //  Panel_Loading.BringToFront();
+            //  Panel_Loading.BringToFront();
             LoadingLabel.Text = "EMS 2.0";
-           // timer1.Enabled = true;
-
+            // timer1.Enabled = true;
+            demographics = new Demographics(this);
         }
 
         // EMS load screen
@@ -46,14 +49,25 @@ namespace EMS_2
             } 
         }
 
+        // Add patient event
         private void Btn_AddPatient_Click(object sender, EventArgs e)
         {
             Panel_AddPatient.BringToFront();
+            Btn_Submit_Update.Text = "Submit";
         }
 
+        // Go to Main Menu (Home) panel
         private void Btn_Home_Click(object sender, EventArgs e)
         {
             Panel_MainMenu.BringToFront();           
+        }
+
+        // Add or update patient
+        private void Btn_Submit_Update_Click(object sender, EventArgs e)
+        {
+            // validate all the fields
+            
+            demographics.PatientDataValidation();
         }
     }
 }

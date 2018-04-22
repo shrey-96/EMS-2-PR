@@ -45,32 +45,32 @@
             this.Btn_AddPatient = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Panel_AddPatient = new System.Windows.Forms.Panel();
-            this.branchbox = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.instockbox = new System.Windows.Forms.ComboBox();
-            this.pricebox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.kmsbox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.colourbox = new System.Windows.Forms.TextBox();
-            this.modelbox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.makebox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.yearbox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.vinbox = new System.Windows.Forms.TextBox();
-            this.Btn_Home = new System.Windows.Forms.Button();
-            this.SubmitAddV = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Field_City = new System.Windows.Forms.TextBox();
+            this.Field_AL2 = new System.Windows.Forms.TextBox();
+            this.Field_AL1 = new System.Windows.Forms.TextBox();
+            this.Field_DOB = new System.Windows.Forms.DateTimePicker();
+            this.Field_LastName = new System.Windows.Forms.TextBox();
+            this.Field_Phone = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Field_Province = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.Btn_Submit_Update = new System.Windows.Forms.Button();
+            this.Btn_Home = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Field_HeadOfHouse = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Field_mInitial = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Field_FirstName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Field_Sex = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Field_HCN = new System.Windows.Forms.TextBox();
             this.Panel_Loading.SuspendLayout();
             this.Panel_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -251,58 +251,182 @@
             // Panel_AddPatient
             // 
             this.Panel_AddPatient.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Panel_AddPatient.Controls.Add(this.textBox1);
+            this.Panel_AddPatient.Controls.Add(this.Field_City);
+            this.Panel_AddPatient.Controls.Add(this.Field_AL2);
+            this.Panel_AddPatient.Controls.Add(this.Field_AL1);
+            this.Panel_AddPatient.Controls.Add(this.Field_DOB);
+            this.Panel_AddPatient.Controls.Add(this.Field_LastName);
+            this.Panel_AddPatient.Controls.Add(this.Field_Phone);
             this.Panel_AddPatient.Controls.Add(this.label12);
-            this.Panel_AddPatient.Controls.Add(this.comboBox1);
+            this.Panel_AddPatient.Controls.Add(this.Field_Province);
             this.Panel_AddPatient.Controls.Add(this.label10);
             this.Panel_AddPatient.Controls.Add(this.label11);
-            this.Panel_AddPatient.Controls.Add(this.comboBox2);
-            this.Panel_AddPatient.Controls.Add(this.SubmitAddV);
+            this.Panel_AddPatient.Controls.Add(this.Btn_Submit_Update);
             this.Panel_AddPatient.Controls.Add(this.Btn_Home);
-            this.Panel_AddPatient.Controls.Add(this.branchbox);
             this.Panel_AddPatient.Controls.Add(this.label9);
             this.Panel_AddPatient.Controls.Add(this.label8);
-            this.Panel_AddPatient.Controls.Add(this.instockbox);
-            this.Panel_AddPatient.Controls.Add(this.pricebox);
+            this.Panel_AddPatient.Controls.Add(this.Field_HeadOfHouse);
             this.Panel_AddPatient.Controls.Add(this.label7);
-            this.Panel_AddPatient.Controls.Add(this.kmsbox);
             this.Panel_AddPatient.Controls.Add(this.label6);
             this.Panel_AddPatient.Controls.Add(this.label5);
-            this.Panel_AddPatient.Controls.Add(this.colourbox);
-            this.Panel_AddPatient.Controls.Add(this.modelbox);
+            this.Panel_AddPatient.Controls.Add(this.Field_mInitial);
             this.Panel_AddPatient.Controls.Add(this.label4);
-            this.Panel_AddPatient.Controls.Add(this.makebox);
+            this.Panel_AddPatient.Controls.Add(this.Field_FirstName);
             this.Panel_AddPatient.Controls.Add(this.label3);
             this.Panel_AddPatient.Controls.Add(this.label2);
-            this.Panel_AddPatient.Controls.Add(this.yearbox);
+            this.Panel_AddPatient.Controls.Add(this.Field_Sex);
             this.Panel_AddPatient.Controls.Add(this.label1);
-            this.Panel_AddPatient.Controls.Add(this.vinbox);
+            this.Panel_AddPatient.Controls.Add(this.Field_HCN);
             this.Panel_AddPatient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_AddPatient.Location = new System.Drawing.Point(0, 0);
             this.Panel_AddPatient.Name = "Panel_AddPatient";
             this.Panel_AddPatient.Size = new System.Drawing.Size(1137, 651);
             this.Panel_AddPatient.TabIndex = 9;
             // 
-            // branchbox
+            // Field_City
             // 
-            this.branchbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.branchbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branchbox.FormattingEnabled = true;
-            this.branchbox.Items.AddRange(new object[] {
+            this.Field_City.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_City.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_City.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_City.Location = new System.Drawing.Point(413, 404);
+            this.Field_City.Name = "Field_City";
+            this.Field_City.Size = new System.Drawing.Size(308, 25);
+            this.Field_City.TabIndex = 55;
+            // 
+            // Field_AL2
+            // 
+            this.Field_AL2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_AL2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_AL2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_AL2.Location = new System.Drawing.Point(414, 358);
+            this.Field_AL2.Name = "Field_AL2";
+            this.Field_AL2.Size = new System.Drawing.Size(308, 25);
+            this.Field_AL2.TabIndex = 54;
+            // 
+            // Field_AL1
+            // 
+            this.Field_AL1.AccessibleDescription = "";
+            this.Field_AL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_AL1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_AL1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_AL1.Location = new System.Drawing.Point(414, 313);
+            this.Field_AL1.Name = "Field_AL1";
+            this.Field_AL1.Size = new System.Drawing.Size(308, 25);
+            this.Field_AL1.TabIndex = 53;
+            // 
+            // Field_DOB
+            // 
+            this.Field_DOB.Location = new System.Drawing.Point(413, 186);
+            this.Field_DOB.Name = "Field_DOB";
+            this.Field_DOB.Size = new System.Drawing.Size(308, 22);
+            this.Field_DOB.TabIndex = 52;
+            // 
+            // Field_LastName
+            // 
+            this.Field_LastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_LastName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_LastName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_LastName.Location = new System.Drawing.Point(413, 62);
+            this.Field_LastName.Name = "Field_LastName";
+            this.Field_LastName.Size = new System.Drawing.Size(308, 25);
+            this.Field_LastName.TabIndex = 51;
+            // 
+            // Field_Phone
+            // 
+            this.Field_Phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_Phone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_Phone.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_Phone.Location = new System.Drawing.Point(413, 493);
+            this.Field_Phone.Name = "Field_Phone";
+            this.Field_Phone.Size = new System.Drawing.Size(308, 25);
+            this.Field_Phone.TabIndex = 50;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Location = new System.Drawing.Point(329, 490);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 25);
+            this.label12.TabIndex = 49;
+            this.label12.Text = "Phone:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Field_Province
+            // 
+            this.Field_Province.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Field_Province.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_Province.FormattingEnabled = true;
+            this.Field_Province.Items.AddRange(new object[] {
             "Sportsworld",
             "Guelph Auto Mall",
             "Waterloo"});
-            this.branchbox.Location = new System.Drawing.Point(413, 356);
-            this.branchbox.Name = "branchbox";
-            this.branchbox.Size = new System.Drawing.Size(308, 26);
-            this.branchbox.TabIndex = 42;
+            this.Field_Province.Location = new System.Drawing.Point(413, 450);
+            this.Field_Province.Name = "Field_Province";
+            this.Field_Province.Size = new System.Drawing.Size(308, 26);
+            this.Field_Province.TabIndex = 48;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(311, 451);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 25);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Province:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Location = new System.Drawing.Point(339, 404);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 25);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "City:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Btn_Submit_Update
+            // 
+            this.Btn_Submit_Update.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Submit_Update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Submit_Update.BackgroundImage")));
+            this.Btn_Submit_Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Submit_Update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Submit_Update.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Submit_Update.Location = new System.Drawing.Point(351, 555);
+            this.Btn_Submit_Update.Name = "Btn_Submit_Update";
+            this.Btn_Submit_Update.Size = new System.Drawing.Size(445, 52);
+            this.Btn_Submit_Update.TabIndex = 44;
+            this.Btn_Submit_Update.Text = "Submit";
+            this.Btn_Submit_Update.UseVisualStyleBackColor = false;
+            this.Btn_Submit_Update.Click += new System.EventHandler(this.Btn_Submit_Update_Click);
+            // 
+            // Btn_Home
+            // 
+            this.Btn_Home.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Home.BackgroundImage")));
+            this.Btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Home.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Home.Location = new System.Drawing.Point(12, 555);
+            this.Btn_Home.Name = "Btn_Home";
+            this.Btn_Home.Size = new System.Drawing.Size(177, 52);
+            this.Btn_Home.TabIndex = 43;
+            this.Btn_Home.Text = "Home";
+            this.Btn_Home.UseVisualStyleBackColor = false;
+            this.Btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.SystemColors.MenuText;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(258, 358);
+            this.label9.Location = new System.Drawing.Point(258, 355);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(145, 25);
             this.label9.TabIndex = 41;
@@ -321,28 +445,15 @@
             this.label8.Text = "Address Line 1:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // instockbox
+            // Field_HeadOfHouse
             // 
-            this.instockbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.instockbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instockbox.FormattingEnabled = true;
-            this.instockbox.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.instockbox.Location = new System.Drawing.Point(413, 310);
-            this.instockbox.Name = "instockbox";
-            this.instockbox.Size = new System.Drawing.Size(308, 26);
-            this.instockbox.TabIndex = 39;
-            // 
-            // pricebox
-            // 
-            this.pricebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pricebox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pricebox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pricebox.Location = new System.Drawing.Point(413, 268);
-            this.pricebox.Name = "pricebox";
-            this.pricebox.Size = new System.Drawing.Size(308, 25);
-            this.pricebox.TabIndex = 38;
+            this.Field_HeadOfHouse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_HeadOfHouse.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_HeadOfHouse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_HeadOfHouse.Location = new System.Drawing.Point(413, 268);
+            this.Field_HeadOfHouse.Name = "Field_HeadOfHouse";
+            this.Field_HeadOfHouse.Size = new System.Drawing.Size(308, 25);
+            this.Field_HeadOfHouse.TabIndex = 38;
             // 
             // label7
             // 
@@ -355,16 +466,6 @@
             this.label7.TabIndex = 37;
             this.label7.Text = "Head Of House:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // kmsbox
-            // 
-            this.kmsbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.kmsbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kmsbox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.kmsbox.Location = new System.Drawing.Point(413, 226);
-            this.kmsbox.Name = "kmsbox";
-            this.kmsbox.Size = new System.Drawing.Size(308, 25);
-            this.kmsbox.TabIndex = 36;
             // 
             // label6
             // 
@@ -390,25 +491,15 @@
             this.label5.Text = "Date of Birth:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // colourbox
+            // Field_mInitial
             // 
-            this.colourbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colourbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colourbox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colourbox.Location = new System.Drawing.Point(413, 185);
-            this.colourbox.Name = "colourbox";
-            this.colourbox.Size = new System.Drawing.Size(308, 25);
-            this.colourbox.TabIndex = 33;
-            // 
-            // modelbox
-            // 
-            this.modelbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.modelbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelbox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.modelbox.Location = new System.Drawing.Point(413, 145);
-            this.modelbox.Name = "modelbox";
-            this.modelbox.Size = new System.Drawing.Size(308, 25);
-            this.modelbox.TabIndex = 32;
+            this.Field_mInitial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_mInitial.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_mInitial.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_mInitial.Location = new System.Drawing.Point(413, 145);
+            this.Field_mInitial.Name = "Field_mInitial";
+            this.Field_mInitial.Size = new System.Drawing.Size(308, 25);
+            this.Field_mInitial.TabIndex = 32;
             // 
             // label4
             // 
@@ -422,15 +513,15 @@
             this.label4.Text = "Middle Initial:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // makebox
+            // Field_FirstName
             // 
-            this.makebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.makebox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.makebox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.makebox.Location = new System.Drawing.Point(413, 105);
-            this.makebox.Name = "makebox";
-            this.makebox.Size = new System.Drawing.Size(308, 25);
-            this.makebox.TabIndex = 30;
+            this.Field_FirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_FirstName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_FirstName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_FirstName.Location = new System.Drawing.Point(413, 105);
+            this.Field_FirstName.Name = "Field_FirstName";
+            this.Field_FirstName.Size = new System.Drawing.Size(308, 25);
+            this.Field_FirstName.TabIndex = 30;
             // 
             // label3
             // 
@@ -456,12 +547,12 @@
             this.label2.Text = "Last Name: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // yearbox
+            // Field_Sex
             // 
-            this.yearbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.yearbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearbox.FormattingEnabled = true;
-            this.yearbox.Items.AddRange(new object[] {
+            this.Field_Sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Field_Sex.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_Sex.FormattingEnabled = true;
+            this.Field_Sex.Items.AddRange(new object[] {
             "2007",
             "2008",
             "2009",
@@ -473,10 +564,10 @@
             "2015",
             "2016",
             "2017"});
-            this.yearbox.Location = new System.Drawing.Point(413, 60);
-            this.yearbox.Name = "yearbox";
-            this.yearbox.Size = new System.Drawing.Size(308, 26);
-            this.yearbox.TabIndex = 27;
+            this.Field_Sex.Location = new System.Drawing.Point(413, 225);
+            this.Field_Sex.Name = "Field_Sex";
+            this.Field_Sex.Size = new System.Drawing.Size(308, 26);
+            this.Field_Sex.TabIndex = 27;
             // 
             // label1
             // 
@@ -490,117 +581,15 @@
             this.label1.Text = "HCN:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // vinbox
+            // Field_HCN
             // 
-            this.vinbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.vinbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vinbox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.vinbox.Location = new System.Drawing.Point(413, 16);
-            this.vinbox.Name = "vinbox";
-            this.vinbox.Size = new System.Drawing.Size(308, 25);
-            this.vinbox.TabIndex = 25;
-            // 
-            // Btn_Home
-            // 
-            this.Btn_Home.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Btn_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Home.BackgroundImage")));
-            this.Btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Home.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Home.Location = new System.Drawing.Point(12, 555);
-            this.Btn_Home.Name = "Btn_Home";
-            this.Btn_Home.Size = new System.Drawing.Size(177, 52);
-            this.Btn_Home.TabIndex = 43;
-            this.Btn_Home.Text = "Home";
-            this.Btn_Home.UseVisualStyleBackColor = false;
-            this.Btn_Home.Click += new System.EventHandler(this.Btn_Home_Click);
-            // 
-            // SubmitAddV
-            // 
-            this.SubmitAddV.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.SubmitAddV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SubmitAddV.BackgroundImage")));
-            this.SubmitAddV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubmitAddV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SubmitAddV.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitAddV.Location = new System.Drawing.Point(351, 555);
-            this.SubmitAddV.Name = "SubmitAddV";
-            this.SubmitAddV.Size = new System.Drawing.Size(445, 52);
-            this.SubmitAddV.TabIndex = 44;
-            this.SubmitAddV.Text = "Submit";
-            this.SubmitAddV.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Sportsworld",
-            "Guelph Auto Mall",
-            "Waterloo"});
-            this.comboBox1.Location = new System.Drawing.Point(413, 452);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(308, 26);
-            this.comboBox1.TabIndex = 48;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.SystemColors.MenuText;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(311, 453);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 25);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Province:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.SystemColors.MenuText;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Location = new System.Drawing.Point(339, 404);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 25);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "City:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.comboBox2.Location = new System.Drawing.Point(413, 406);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(308, 26);
-            this.comboBox2.TabIndex = 45;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(413, 495);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 25);
-            this.textBox1.TabIndex = 50;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.SystemColors.MenuText;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Location = new System.Drawing.Point(329, 492);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 25);
-            this.label12.TabIndex = 49;
-            this.label12.Text = "Phone:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Field_HCN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Field_HCN.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Field_HCN.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Field_HCN.Location = new System.Drawing.Point(413, 16);
+            this.Field_HCN.Name = "Field_HCN";
+            this.Field_HCN.Size = new System.Drawing.Size(308, 25);
+            this.Field_HCN.TabIndex = 25;
             // 
             // UI
             // 
@@ -611,7 +600,7 @@
             this.Controls.Add(this.Panel_MainMenu);
             this.Controls.Add(this.Panel_Loading);
             this.Name = "UI";
-            this.Text = "Form1";
+            this.Text = "EMS";
             this.Panel_Loading.ResumeLayout(false);
             this.Panel_Loading.PerformLayout();
             this.Panel_MainMenu.ResumeLayout(false);
@@ -639,32 +628,32 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel Panel_AddPatient;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button SubmitAddV;
+        private System.Windows.Forms.Button Btn_Submit_Update;
         private System.Windows.Forms.Button Btn_Home;
-        private System.Windows.Forms.ComboBox branchbox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox instockbox;
-        private System.Windows.Forms.TextBox pricebox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox kmsbox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox colourbox;
-        private System.Windows.Forms.TextBox modelbox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox makebox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox yearbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox vinbox;
+        public System.Windows.Forms.TextBox Field_HCN;
+        public System.Windows.Forms.TextBox Field_Phone;
+        public System.Windows.Forms.ComboBox Field_Province;
+        public System.Windows.Forms.TextBox Field_HeadOfHouse;
+        public System.Windows.Forms.TextBox Field_mInitial;
+        public System.Windows.Forms.TextBox Field_FirstName;
+        public System.Windows.Forms.ComboBox Field_Sex;
+        public System.Windows.Forms.TextBox Field_City;
+        public System.Windows.Forms.TextBox Field_AL2;
+        public System.Windows.Forms.TextBox Field_AL1;
+        public System.Windows.Forms.DateTimePicker Field_DOB;
+        public System.Windows.Forms.TextBox Field_LastName;
     }
 }
 
