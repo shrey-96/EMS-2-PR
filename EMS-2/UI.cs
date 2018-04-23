@@ -20,11 +20,13 @@ namespace EMS_2
         public UI()
         {
             InitializeComponent();
-          //  demographics = new Demographics();
+            Field_DOB.MaxDate = DateTime.Today;
+            
+            //  demographics = new Demographics();
 
-            //  Panel_Loading.BringToFront();
+            Panel_Loading.BringToFront();
             LoadingLabel.Text = "EMS 2.0";
-            // timer1.Enabled = true;
+            timer1.Enabled = true;
             demographics = new Demographics(this);
         }
 
@@ -54,6 +56,7 @@ namespace EMS_2
         {
             Panel_AddPatient.BringToFront();
             Btn_Submit_Update.Text = "Submit";
+            
         }
 
         // Go to Main Menu (Home) panel

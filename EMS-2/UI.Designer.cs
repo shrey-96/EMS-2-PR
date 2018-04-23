@@ -71,10 +71,12 @@
             this.Field_Sex = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Field_HCN = new System.Windows.Forms.TextBox();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.Panel_Loading.SuspendLayout();
             this.Panel_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_AddPatient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_Loading
@@ -359,9 +361,19 @@
             this.Field_Province.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Field_Province.FormattingEnabled = true;
             this.Field_Province.Items.AddRange(new object[] {
-            "Sportsworld",
-            "Guelph Auto Mall",
-            "Waterloo"});
+            "Alberta",
+            "British Columbia",
+            "Newfoundland",
+            "Manitoba",
+            "New Brunswick",
+            "Northwest Territories",
+            "Nova Scotia",
+            "Nunavut",
+            "Ontario",
+            "Prince Edward Island",
+            "Quebec",
+            "Saskatchewan",
+            "Yukon"});
             this.Field_Province.Location = new System.Drawing.Point(413, 450);
             this.Field_Province.Name = "Field_Province";
             this.Field_Province.Size = new System.Drawing.Size(308, 26);
@@ -553,17 +565,10 @@
             this.Field_Sex.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Field_Sex.FormattingEnabled = true;
             this.Field_Sex.Items.AddRange(new object[] {
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017"});
+            "M",
+            "F",
+            "I",
+            "H"});
             this.Field_Sex.Location = new System.Drawing.Point(413, 225);
             this.Field_Sex.Name = "Field_Sex";
             this.Field_Sex.Size = new System.Drawing.Size(308, 26);
@@ -591,6 +596,12 @@
             this.Field_HCN.Size = new System.Drawing.Size(308, 25);
             this.Field_HCN.TabIndex = 25;
             // 
+            // ep
+            // 
+            this.ep.BlinkRate = 0;
+            this.ep.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.ep.ContainerControl = this;
+            // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -607,6 +618,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel_AddPatient.ResumeLayout(false);
             this.Panel_AddPatient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,6 +666,7 @@
         public System.Windows.Forms.TextBox Field_AL1;
         public System.Windows.Forms.DateTimePicker Field_DOB;
         public System.Windows.Forms.TextBox Field_LastName;
+        public System.Windows.Forms.ErrorProvider ep;
     }
 }
 
