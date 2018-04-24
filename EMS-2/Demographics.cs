@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -11,10 +12,13 @@ namespace EMS_2
     class Demographics
     {
         public UI ui;
-        public Demographics(UI form)
+        DataAccess db;
+
+        public Demographics(UI form, DataAccess db_)
         {
             // constructor does nothing
             ui = form;
+            db = db_;
         }
 
 
@@ -40,7 +44,7 @@ namespace EMS_2
 
             // validate HCN
             // ------------- create and call hcn validation class -----------
-            msg = IsNotBlank(HCN, false);
+            msg = ValidateHCN(HCN);            
             if (msg != "") AllClear = false; 
             Error(ui.Field_HCN, msg);
 
@@ -53,12 +57,21 @@ namespace EMS_2
             msg = IsNotBlank(FirstName, false);
             if (msg != "") AllClear = false;
             Error(ui.Field_FirstName, msg);
-                      
+
             if (HeadOfHouse == "")
             {
                 // validate HCN and set the flag to false 
                 HoH = false;
                 //MessageBox.Show("blank hoh");
+            }
+            else
+                if (ValidateHCN(HeadOfHouse) == "")
+            {
+                string query = "SELECT * FROM Demograhics where HOH_HCN = " + HeadOfHouse;
+                string result = db.GetColumnData(query, "Demographics");
+
+
+
             }
 
             msg = IsNotBlank(sex, false);
@@ -91,8 +104,18 @@ namespace EMS_2
                 ui.ep.SetError(ui.Field_Phone, "");
 
 
+            //-----------------------------------------------------------------
+            // getting past this point means all the data has been validated
+
             if (AllClear)
+            {
                 MessageBox.Show("All Clear");
+              //  db.Add_Update_Patient(
+              //      true, HCN, LastName, FirstName, mInitial, DOB, sex, 
+              //      HeadOfHouse, AddressL1, AddressL2,
+              //      City, Province, Phone);
+                
+            }
 
 
 
@@ -123,6 +146,7 @@ namespace EMS_2
             return Regex.Match(phoneNum, @"^[0-9]{10}$").Success;
         }
 
+        // check if the string is not blank, also check for numbers based on bool paramater
         public string IsNotBlank(string str, bool NumberAllowed)
         {
             string msg = "";
@@ -131,6 +155,12 @@ namespace EMS_2
             if (str.Equals(""))
             {
                 msg = "Field cannot be blank";
+                return msg;
+            }
+
+            if(SpecialCharCheck(str))
+            {
+                msg = "Field cannot contain special characters";
                 return msg;
             }
 
@@ -150,7 +180,7 @@ namespace EMS_2
             return msg;
         }
 
-
+        // head of house based fields validation
         public string ConditionalValidations(string field, bool HoH_flag)
         {
             string msg = "";
@@ -167,6 +197,49 @@ namespace EMS_2
             return msg;
         }
 
+        // validate the hcn
+        public static string ValidateHCN(string HCN)
+        {
+            
+            bool flag = true;
+            string msg = "";
+
+            
+
+            // make sure the length of HCN is 12
+            if (HCN.Length != 12)
+            {
+                flag = false;
+                msg = "Invalid HCN. Try again!";
+                return msg;
+            }
+
+            // make sure that first 10 characters are numeric
+            for (int i = 0; i < HCN.Length - 2; i++)
+            {
+                if (!char.IsDigit(HCN[i]))
+                {
+                    flag = false;
+                }
+            }
+
+            // make sure that last two characters are letters
+            for (int i = HCN.Length - 2; i < HCN.Length; i++)
+            {
+                if (!char.IsLetter(HCN[i]))
+                {
+                    flag = false;
+                }
+            }
+
+            // print error if invalid
+            if (!flag)
+                msg = "Invalid HCN. Try again!n";
+
+            return msg;
+        }
+
+        // show error
         private void Error(Control control, string msg)
         {
             try
@@ -177,6 +250,18 @@ namespace EMS_2
             {
                 MessageBox.Show("Error: " + ex);
             }
+        }
+
+        // check for special characters
+        public static bool SpecialCharCheck(string temp)
+        {
+            bool flag = true;
+            Regex r = new Regex("^[a-zA-Z0-9]*$");
+
+            if (r.IsMatch(temp))
+                flag = false;
+
+            return flag;
         }
 
 

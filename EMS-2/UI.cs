@@ -27,7 +27,7 @@ namespace EMS_2
             Panel_Loading.BringToFront();
             LoadingLabel.Text = "EMS 2.0";
             timer1.Enabled = true;
-            demographics = new Demographics(this);
+            
         }
 
         // EMS load screen
@@ -48,6 +48,7 @@ namespace EMS_2
                 Panel_MainMenu.BringToFront();
                 timer1.Enabled = false;
                 db = new DataAccess();
+                demographics = new Demographics(this, db);
             } 
         }
 
