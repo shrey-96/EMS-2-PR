@@ -24,9 +24,9 @@ namespace EMS_2
             
             //  demographics = new Demographics();
 
-            Panel_Loading.BringToFront();
+         //   Panel_Loading.BringToFront();
             LoadingLabel.Text = "EMS 2.0";
-            timer1.Enabled = true;
+        ///    timer1.Enabled = true;
             
         }
 
@@ -72,6 +72,17 @@ namespace EMS_2
             // validate all the fields
             
             demographics.PatientDataValidation();
+        }
+
+        private void Btn_UpdatePatient_Click(object sender, EventArgs e)
+        {
+            Btn_Submit_Update.Text = "Update";
+            Panel_LookForPatient.BringToFront();
+        }
+
+        private void Btn_LookupPatient_Click(object sender, EventArgs e)
+        {
+            demographics.LookForPatient();
         }
     }
 }

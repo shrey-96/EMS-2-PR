@@ -72,11 +72,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Field_HCN = new System.Windows.Forms.TextBox();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Panel_LookForPatient = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Box_HCN = new System.Windows.Forms.TextBox();
+            this.Btn_LookupPatient = new System.Windows.Forms.Button();
             this.Panel_Loading.SuspendLayout();
             this.Panel_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_AddPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
+            this.Panel_LookForPatient.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Loading
@@ -192,6 +198,7 @@
             this.Btn_UpdatePatient.TabIndex = 4;
             this.Btn_UpdatePatient.Text = "Update Patient";
             this.Btn_UpdatePatient.UseVisualStyleBackColor = false;
+            this.Btn_UpdatePatient.Click += new System.EventHandler(this.Btn_UpdatePatient_Click);
             // 
             // Btn_ScheduleApt
             // 
@@ -293,7 +300,7 @@
             this.Field_City.Location = new System.Drawing.Point(413, 404);
             this.Field_City.Name = "Field_City";
             this.Field_City.Size = new System.Drawing.Size(308, 25);
-            this.Field_City.TabIndex = 55;
+            this.Field_City.TabIndex = 10;
             // 
             // Field_AL2
             // 
@@ -303,7 +310,7 @@
             this.Field_AL2.Location = new System.Drawing.Point(414, 358);
             this.Field_AL2.Name = "Field_AL2";
             this.Field_AL2.Size = new System.Drawing.Size(308, 25);
-            this.Field_AL2.TabIndex = 54;
+            this.Field_AL2.TabIndex = 9;
             // 
             // Field_AL1
             // 
@@ -314,14 +321,14 @@
             this.Field_AL1.Location = new System.Drawing.Point(414, 313);
             this.Field_AL1.Name = "Field_AL1";
             this.Field_AL1.Size = new System.Drawing.Size(308, 25);
-            this.Field_AL1.TabIndex = 53;
+            this.Field_AL1.TabIndex = 8;
             // 
             // Field_DOB
             // 
             this.Field_DOB.Location = new System.Drawing.Point(413, 186);
             this.Field_DOB.Name = "Field_DOB";
             this.Field_DOB.Size = new System.Drawing.Size(308, 22);
-            this.Field_DOB.TabIndex = 52;
+            this.Field_DOB.TabIndex = 5;
             // 
             // Field_LastName
             // 
@@ -331,7 +338,7 @@
             this.Field_LastName.Location = new System.Drawing.Point(413, 62);
             this.Field_LastName.Name = "Field_LastName";
             this.Field_LastName.Size = new System.Drawing.Size(308, 25);
-            this.Field_LastName.TabIndex = 51;
+            this.Field_LastName.TabIndex = 2;
             // 
             // Field_Phone
             // 
@@ -341,7 +348,7 @@
             this.Field_Phone.Location = new System.Drawing.Point(413, 493);
             this.Field_Phone.Name = "Field_Phone";
             this.Field_Phone.Size = new System.Drawing.Size(308, 25);
-            this.Field_Phone.TabIndex = 50;
+            this.Field_Phone.TabIndex = 12;
             // 
             // label12
             // 
@@ -377,7 +384,7 @@
             this.Field_Province.Location = new System.Drawing.Point(413, 450);
             this.Field_Province.Name = "Field_Province";
             this.Field_Province.Size = new System.Drawing.Size(308, 26);
-            this.Field_Province.TabIndex = 48;
+            this.Field_Province.TabIndex = 11;
             // 
             // label10
             // 
@@ -465,7 +472,7 @@
             this.Field_HeadOfHouse.Location = new System.Drawing.Point(413, 268);
             this.Field_HeadOfHouse.Name = "Field_HeadOfHouse";
             this.Field_HeadOfHouse.Size = new System.Drawing.Size(308, 25);
-            this.Field_HeadOfHouse.TabIndex = 38;
+            this.Field_HeadOfHouse.TabIndex = 7;
             // 
             // label7
             // 
@@ -511,7 +518,7 @@
             this.Field_mInitial.Location = new System.Drawing.Point(413, 145);
             this.Field_mInitial.Name = "Field_mInitial";
             this.Field_mInitial.Size = new System.Drawing.Size(308, 25);
-            this.Field_mInitial.TabIndex = 32;
+            this.Field_mInitial.TabIndex = 4;
             // 
             // label4
             // 
@@ -533,7 +540,7 @@
             this.Field_FirstName.Location = new System.Drawing.Point(413, 105);
             this.Field_FirstName.Name = "Field_FirstName";
             this.Field_FirstName.Size = new System.Drawing.Size(308, 25);
-            this.Field_FirstName.TabIndex = 30;
+            this.Field_FirstName.TabIndex = 3;
             // 
             // label3
             // 
@@ -572,7 +579,7 @@
             this.Field_Sex.Location = new System.Drawing.Point(413, 225);
             this.Field_Sex.Name = "Field_Sex";
             this.Field_Sex.Size = new System.Drawing.Size(308, 26);
-            this.Field_Sex.TabIndex = 27;
+            this.Field_Sex.TabIndex = 6;
             // 
             // label1
             // 
@@ -594,7 +601,8 @@
             this.Field_HCN.Location = new System.Drawing.Point(413, 16);
             this.Field_HCN.Name = "Field_HCN";
             this.Field_HCN.Size = new System.Drawing.Size(308, 25);
-            this.Field_HCN.TabIndex = 25;
+            this.Field_HCN.TabIndex = 1;
+            this.Field_HCN.Tag = "";
             // 
             // ep
             // 
@@ -602,11 +610,78 @@
             this.ep.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.ep.ContainerControl = this;
             // 
+            // Panel_LookForPatient
+            // 
+            this.Panel_LookForPatient.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Panel_LookForPatient.Controls.Add(this.Btn_LookupPatient);
+            this.Panel_LookForPatient.Controls.Add(this.label13);
+            this.Panel_LookForPatient.Controls.Add(this.Box_HCN);
+            this.Panel_LookForPatient.Controls.Add(this.button1);
+            this.Panel_LookForPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel_LookForPatient.Location = new System.Drawing.Point(0, 0);
+            this.Panel_LookForPatient.Name = "Panel_LookForPatient";
+            this.Panel_LookForPatient.Size = new System.Drawing.Size(1137, 651);
+            this.Panel_LookForPatient.TabIndex = 50;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(49, 526);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(177, 52);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Btn_Home_Click);
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Location = new System.Drawing.Point(359, 203);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 22);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "HCN:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Box_HCN
+            // 
+            this.Box_HCN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Box_HCN.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Box_HCN.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Box_HCN.Location = new System.Drawing.Point(439, 203);
+            this.Box_HCN.Name = "Box_HCN";
+            this.Box_HCN.Size = new System.Drawing.Size(308, 25);
+            this.Box_HCN.TabIndex = 46;
+            this.Box_HCN.Tag = "";
+            // 
+            // Btn_LookupPatient
+            // 
+            this.Btn_LookupPatient.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_LookupPatient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_LookupPatient.BackgroundImage")));
+            this.Btn_LookupPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_LookupPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_LookupPatient.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_LookupPatient.Location = new System.Drawing.Point(452, 273);
+            this.Btn_LookupPatient.Name = "Btn_LookupPatient";
+            this.Btn_LookupPatient.Size = new System.Drawing.Size(270, 43);
+            this.Btn_LookupPatient.TabIndex = 48;
+            this.Btn_LookupPatient.Text = "Lookup Patient";
+            this.Btn_LookupPatient.UseVisualStyleBackColor = false;
+            this.Btn_LookupPatient.Click += new System.EventHandler(this.Btn_LookupPatient_Click);
+            // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 651);
+            this.Controls.Add(this.Panel_LookForPatient);
             this.Controls.Add(this.Panel_AddPatient);
             this.Controls.Add(this.Panel_MainMenu);
             this.Controls.Add(this.Panel_Loading);
@@ -619,6 +694,8 @@
             this.Panel_AddPatient.ResumeLayout(false);
             this.Panel_AddPatient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
+            this.Panel_LookForPatient.ResumeLayout(false);
+            this.Panel_LookForPatient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -667,6 +744,11 @@
         public System.Windows.Forms.DateTimePicker Field_DOB;
         public System.Windows.Forms.TextBox Field_LastName;
         public System.Windows.Forms.ErrorProvider ep;
+        private System.Windows.Forms.Panel Panel_LookForPatient;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_LookupPatient;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.TextBox Box_HCN;
     }
 }
 

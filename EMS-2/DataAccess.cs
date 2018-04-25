@@ -95,12 +95,19 @@ namespace EMS_2
         {
             string result = "";
 
-            using (SqlDataReader reader = GetData(query))
+            try
             {
-                while (reader.Read())
+                using (SqlDataReader reader = GetData(query))
                 {
-                    result = reader[column].ToString();
+                    while (reader.Read())
+                    {
+                        result = reader[column].ToString();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+               // MessageBox.Show("Head of House does not exist in database");
             }
 
             return result;

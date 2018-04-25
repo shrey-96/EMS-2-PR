@@ -26,6 +26,7 @@ namespace EMS_2
         {
             string msg = "";
             bool HoH = true;
+            string query = "";
             bool AllClear = true;
 
             // get all the strings from input fields
@@ -33,7 +34,8 @@ namespace EMS_2
             string LastName = ui.Field_LastName.Text;
             string FirstName = ui.Field_FirstName.Text;
             string mInitial = ui.Field_mInitial.Text;
-            string DOB = ui.Field_DOB.Text;
+            string DOB = ui.Field_DOB.Value.Date.ToString("yyyy-MM-dd");
+         //   MessageBox.Show(DOB);
             string sex = ui.Field_Sex.Text;
             string HeadOfHouse = ui.Field_HeadOfHouse.Text;
             string AddressL1 = ui.Field_AL1.Text;
@@ -62,16 +64,33 @@ namespace EMS_2
             {
                 // validate HCN and set the flag to false 
                 HoH = false;
+                Error(ui.Field_HeadOfHouse, msg);
                 //MessageBox.Show("blank hoh");
             }
-            else
-                if (ValidateHCN(HeadOfHouse) == "")
+
+            if (HoH)
             {
-                string query = "SELECT * FROM Demograhics where HOH_HCN = " + HeadOfHouse;
-                string result = db.GetColumnData(query, "Demographics");
+                msg = ValidateHCN(HeadOfHouse);               
 
-
-
+                if (msg == "")
+                {
+                    query = "SELECT HCN FROM Demographics where HCN = '" + HeadOfHouse + "'";
+                    string result = db.GetColumnData(query, "HCN");
+                    if(result == "")
+                    {
+                        msg = "Could not find Head of House in the database";
+                        MessageBox.Show(msg);
+                        AllClear = false;
+                    }
+                    Error(ui.Field_HeadOfHouse, msg);
+                 //   return;
+                }
+                else
+                {
+                    Error(ui.Field_HeadOfHouse, msg);
+                    AllClear = false;
+                }
+               
             }
 
             msg = IsNotBlank(sex, false);
@@ -103,17 +122,62 @@ namespace EMS_2
             else
                 ui.ep.SetError(ui.Field_Phone, "");
 
+            
+            if(AllClear)
+            {
+                query = "select HCN from Demographics where HCN = '" + HCN + "'";
+                if(db.GetColumnData(query, "HCN") != "" )                    
+                {
+                    MessageBox.Show("A patient with same HCN already exist", "Error");
+                    AllClear = false;
+                }
+            }
 
+
+            // if Head of house is provided
+            if(HoH && AllClear)
+            {
+                if (ui.Field_AL1.Text == "")
+                {
+                    query = "select addL1 from Demographics where HCN = '" + HeadOfHouse + "'";
+                    ui.Field_AL1.Text = AddressL1 = db.GetColumnData(query, "addL1");
+                }
+
+                if (ui.Field_AL2.Text == "")
+                {
+                    query = "select addL2 from Demographics where HCN = '" + HeadOfHouse + "'";
+                    ui.Field_AL2.Text = AddressL2 = db.GetColumnData(query, "addL2");
+                }
+
+                if (ui.Field_City.Text == "")
+                {
+                    query = "select city from Demographics where HCN = '" + HeadOfHouse + "'";
+                    ui.Field_City.Text = City = db.GetColumnData(query, "city");
+                }
+
+                if (ui.Field_Province.Text == "")
+                {
+                    query = "select province from Demographics where HCN = '" + HeadOfHouse + "'";
+                    ui.Field_Province.Text = Province = db.GetColumnData(query, "province");
+                }
+
+                if (ui.Field_Phone.Text == "")
+                {
+                    query = "select phone from Demographics where HCN = '" + HeadOfHouse + "'";
+                    ui.Field_Phone.Text = Phone = db.GetColumnData(query, "phone");
+                }
+
+            }
             //-----------------------------------------------------------------
             // getting past this point means all the data has been validated
 
             if (AllClear)
             {
                 MessageBox.Show("All Clear");
-              //  db.Add_Update_Patient(
-              //      true, HCN, LastName, FirstName, mInitial, DOB, sex, 
-              //      HeadOfHouse, AddressL1, AddressL2,
-              //      City, Province, Phone);
+               db.Add_Update_Patient(
+                   true, HCN, LastName, FirstName, mInitial, DOB, sex, 
+                   HeadOfHouse, AddressL1, AddressL2,
+                   City, Province, Phone);
                 
             }
 
@@ -134,6 +198,18 @@ namespace EMS_2
         }
 
 
+
+
+        public void LookForPatient()
+        {
+            string HCN = ui.Box_HCN.Text;
+            string msg = ValidateHCN(HCN);
+
+            if(msg == "")
+            {
+
+            }
+        }
 
         public static bool ValidatePhone(string phoneNum, bool HoH_Flag)
         {
