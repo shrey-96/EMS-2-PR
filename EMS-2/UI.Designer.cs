@@ -158,6 +158,7 @@
             this.Btn_Exit.TabIndex = 7;
             this.Btn_Exit.Text = "Exit";
             this.Btn_Exit.UseVisualStyleBackColor = true;
+            this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
             // 
             // Btn_DisplayMB
             // 
@@ -238,6 +239,7 @@
             this.Btn_SearchPatient.TabIndex = 1;
             this.Btn_SearchPatient.Text = "Search Patient";
             this.Btn_SearchPatient.UseVisualStyleBackColor = true;
+            this.Btn_SearchPatient.Click += new System.EventHandler(this.Btn_SearchPatient_Click);
             // 
             // Btn_AddPatient
             // 
@@ -681,10 +683,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 651);
-            this.Controls.Add(this.Panel_LookForPatient);
-            this.Controls.Add(this.Panel_AddPatient);
             this.Controls.Add(this.Panel_MainMenu);
             this.Controls.Add(this.Panel_Loading);
+            this.Controls.Add(this.Panel_LookForPatient);
+            this.Controls.Add(this.Panel_AddPatient);
             this.Name = "UI";
             this.Text = "EMS";
             this.Panel_Loading.ResumeLayout(false);
@@ -704,7 +706,6 @@
 
         private System.Windows.Forms.Panel Panel_Loading;
         private System.Windows.Forms.Label LoadingLabel;
-        private System.Windows.Forms.Panel Panel_MainMenu;
         private System.Windows.Forms.Button Btn_SearchPatient;
         private System.Windows.Forms.Button Btn_AddPatient;
         private System.Windows.Forms.Button Btn_BillableCode;
@@ -716,7 +717,6 @@
         private System.Windows.Forms.ProgressBar FakeBar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel Panel_AddPatient;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -744,11 +744,13 @@
         public System.Windows.Forms.DateTimePicker Field_DOB;
         public System.Windows.Forms.TextBox Field_LastName;
         public System.Windows.Forms.ErrorProvider ep;
-        private System.Windows.Forms.Panel Panel_LookForPatient;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Btn_LookupPatient;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox Box_HCN;
+        public System.Windows.Forms.Panel Panel_MainMenu;
+        public System.Windows.Forms.Panel Panel_AddPatient;
+        public System.Windows.Forms.Panel Panel_LookForPatient;
     }
 }
 

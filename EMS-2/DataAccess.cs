@@ -113,6 +113,30 @@ namespace EMS_2
             return result;
         }
 
+        // gets a specific patient data
+        public string GetPatientData(string TableName, string column, string HCN)
+        {
+            string result = "";
+            string query = "SELECT " + column + " FROM " + TableName + " where HCN = '" + HCN + "'";
+
+            try
+            {
+                using (SqlDataReader reader = GetData(query))
+                {
+                    reader.Read();
+                    result = reader[column].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show("Head of House does not exist in database");
+            }
+
+            return result;
+        }
+
+
+
         public void Add_Update_Patient(bool insert, string hcn, string lastname, string firstname, string minitial, string dob,
             string sex, string headofhouse, string al1, string al2, string city, string province, string phone)       
         {
@@ -129,7 +153,9 @@ namespace EMS_2
                 {
                     TempCmd.CommandType = CommandType.StoredProcedure;
 
-                    TempCmd.Parameters.Add("@HCN_param", SqlDbType.VarChar).Value = hcn;
+                    // add HCN parameter if and only if new patient is being added
+                    
+                    TempCmd.Parameters.Add("@HCN_param", SqlDbType.VarChar).Value = hcn;                
                     TempCmd.Parameters.Add("@LastName_param", SqlDbType.VarChar).Value = lastname;
                     TempCmd.Parameters.Add("@FirstName_param", SqlDbType.VarChar).Value = firstname;
                     TempCmd.Parameters.Add("@mInitial_param", SqlDbType.VarChar).Value = minitial;
@@ -145,14 +171,14 @@ namespace EMS_2
                     TempCmd.ExecuteNonQuery();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 string error_msg = "update";
 
                 if (insert)
                     error_msg = "insert into ";
 
-                MessageBox.Show("Failed to " + error_msg + " database. Fatal Error. ", "Error");
+                MessageBox.Show("Failed to " + error_msg + " database. Fatal Error. \n\n" + ex, "Error");
                 return;
             }
         }

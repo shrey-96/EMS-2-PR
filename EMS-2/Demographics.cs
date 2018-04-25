@@ -21,8 +21,9 @@ namespace EMS_2
             db = db_;
         }
 
-
-        public void PatientDataValidation()
+        // add_status:  true -- if patient is being added
+        //              false -- if patient is being updated
+        public void PatientDataValidation(bool add_status)
         {
             string msg = "";
             bool HoH = true;
@@ -122,8 +123,9 @@ namespace EMS_2
             else
                 ui.ep.SetError(ui.Field_Phone, "");
 
-            
-            if(AllClear)
+            // check if everything is validated, and check for pre-existing string if and only if
+            // new patient is being added. Don't check for pre-existence if patient is being updated
+            if(AllClear && add_status)
             {
                 query = "select HCN from Demographics where HCN = '" + HCN + "'";
                 if(db.GetColumnData(query, "HCN") != "" )                    
@@ -175,40 +177,61 @@ namespace EMS_2
             {
                 MessageBox.Show("All Clear");
                db.Add_Update_Patient(
-                   true, HCN, LastName, FirstName, mInitial, DOB, sex, 
+                   add_status, HCN, LastName, FirstName, mInitial, DOB, sex, 
                    HeadOfHouse, AddressL1, AddressL2,
                    City, Province, Phone);
                 
             }
 
-
-
-            // MessageBox.Show(HCN + "\n" +
-            //     LastName + "\n" +
-            //     FirstName + "\n" +
-            //     mInitial + "\n" +
-            //     DOB + "\n" +
-            //     sex + "\n" +
-            //     HeadOfHouse + "\n" +
-            //     AddressL1 + "\n" +
-            //     AddressL2 + "\n" +
-            //     City + "\n" +
-            //     Province + "\n" +
-            //     Phone + "\n" );
+            
         }
 
 
 
 
-        public void LookForPatient()
+        public bool LookForPatient()
         {
             string HCN = ui.Box_HCN.Text;
             string msg = ValidateHCN(HCN);
+            Error(ui.Box_HCN, msg);
+            bool status = false;
 
-            if(msg == "")
+            string result = "";
+            string Table = "Demographics";
+
+            try
             {
+                if (msg == "")
+                {
+                    result = db.GetPatientData(Table, "HCN", HCN);
+                    if (result == "")
+                    {
+                        MessageBox.Show("Could not find the patient. Try again.", "Error");
+                        return status;
+                    }
 
+                    ui.Field_HCN.Text = result;
+                    ui.Field_LastName.Text = db.GetPatientData(Table, "LastName", HCN);
+                    ui.Field_FirstName.Text = db.GetPatientData(Table, "FirstName", HCN);
+                    ui.Field_mInitial.Text = db.GetPatientData(Table, "mInitial", HCN);
+                    ui.Field_DOB.Text = db.GetPatientData(Table, "DOB", HCN);
+                    ui.Field_Sex.Text = db.GetPatientData(Table, "sex", HCN);
+                    ui.Field_HeadOfHouse.Text = db.GetPatientData(Table, "HOH_HCN", HCN);
+                    ui.Field_AL1.Text = db.GetPatientData(Table, "addL1", HCN);
+                    ui.Field_AL2.Text = db.GetPatientData(Table, "addL2", HCN);
+                    ui.Field_City.Text = db.GetPatientData(Table, "city", HCN);
+                    ui.Field_Province.Text = db.GetPatientData(Table, "province", HCN);
+                    ui.Field_Phone.Text = db.GetPatientData(Table, "Phone", HCN);
+
+                    status = true;
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while getting patient data from the database.\n " + ex.ToString(), "Error");
+            }
+
+            return status;
         }
 
         public static bool ValidatePhone(string phoneNum, bool HoH_Flag)

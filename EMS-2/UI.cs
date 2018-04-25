@@ -24,9 +24,9 @@ namespace EMS_2
             
             //  demographics = new Demographics();
 
-         //   Panel_Loading.BringToFront();
+            Panel_Loading.BringToFront();
             LoadingLabel.Text = "EMS 2.0";
-        ///    timer1.Enabled = true;
+            timer1.Enabled = true;
             
         }
 
@@ -63,26 +63,82 @@ namespace EMS_2
         // Go to Main Menu (Home) panel
         private void Btn_Home_Click(object sender, EventArgs e)
         {
+            ClearAllFields();
             Panel_MainMenu.BringToFront();           
         }
 
-        // Add or update patient
+        // Button on main patient data form
         private void Btn_Submit_Update_Click(object sender, EventArgs e)
         {
             // validate all the fields
-            
-            demographics.PatientDataValidation();
+            bool add_status = true;
+            if(Btn_Submit_Update.Text == "Update")
+            {
+                add_status = false;
+            }
+
+            demographics.PatientDataValidation(add_status);
         }
 
+        // update button on home page
         private void Btn_UpdatePatient_Click(object sender, EventArgs e)
         {
             Btn_Submit_Update.Text = "Update";
             Panel_LookForPatient.BringToFront();
         }
 
+        // looking for using HCN string entered by the user
         private void Btn_LookupPatient_Click(object sender, EventArgs e)
         {
-            demographics.LookForPatient();
+
+            // search patient, if found, go to update/add patient panel
+            if (demographics.LookForPatient())
+            {
+                Panel_AddPatient.BringToFront();
+                Field_HCN.ReadOnly = true;
+            }
+        }
+
+        private void ClearAllFields()
+        {
+            Field_HCN.ReadOnly = false;
+            Btn_Submit_Update.Visible = true;
+
+            // clear all on patient form page
+            Field_HCN.Clear();
+            Field_LastName.Clear();
+            Field_FirstName.Clear();
+            Field_mInitial.Clear();
+            Field_HeadOfHouse.Clear();
+            Field_HeadOfHouse.Clear();
+            Field_AL1.Clear();
+            Field_AL2.Clear();
+            Field_City.Clear();
+            Field_Phone.Clear();
+
+            // clear Textbox on panel that takes HCN to look patient up
+            Box_HCN.Clear();
+
+
+        }
+
+        private void Btn_SearchPatient_Click(object sender, EventArgs e)
+        {
+            Panel_LookForPatient.BringToFront();
+            Btn_Submit_Update.Visible = false;
+        }
+
+        // exit application
+        private void Btn_Exit_Click(object sender, EventArgs e)
+        {
+            DialogResult result =  MessageBox.Show("Are you sure you want to exit the application?", 
+                "Confirm", MessageBoxButtons.YesNo);
+
+            if(result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
     }
 }
